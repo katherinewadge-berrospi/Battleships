@@ -5,6 +5,11 @@
 from random import randint
 
 
+welcome = "\nWelcome to BattleShips!"
+choose = "\nChoose the size of the board..."
+print(welcome.upper())
+print(choose)
+
 def get_dimensions():
     """
     Allows the user to pick the size of the board.
@@ -75,17 +80,17 @@ while player_ships and opponent_ships:
 
     # Display scores
     print(f"\nYour Score: {player_score}")
-    print(f"\nOpponent's Score: {opponent_score}")
+    print(f"Opponent's Score: {opponent_score}")
 
     # Player's turn
     print("\nYour turn!")
     while True:
         try:
-            target_row = int(input(f"Enter the target row (0 - {rows - 1}): "))
+            target_row = int(input(f"\nEnter the target row (0 - {rows - 1}): "))
             target_col = int(input(f"Enter the target column (0 - {cols - 1}): "))
 
             if 0 <= target_row < rows and 0 <= target_col < cols:
-                if opponent_visible_board[target_row][target_col] not in ("!", "M"):
+                if opponent_visible_board[target_row][target_col] not in ("!", "X"):
                     break
                 else:
                     print("You already targeted this position. Try again.")
