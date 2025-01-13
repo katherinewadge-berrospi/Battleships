@@ -77,3 +77,13 @@ while player_ships and opponent_ships:
     
     print("Your turn!")
     target_row, target_col = target_placement()
+
+     # Marks a successful hit
+    if (target_row, target_column) in opponent_ships:
+        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})!")
+        board[target_row][target_col] = "!" 
+        opponent_ships.remove((target_row, target_col))
+    # Marks a miss
+    else:
+        print(f"Miss! No ship at ({target_row}, {target_col}).")
+        opponent_board[target_row][target_col] = "M"  
