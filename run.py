@@ -21,15 +21,10 @@ def get_dimensions():
             print("Invalid input. Please enter integers.")  
 
 
-
-
-board_size = 6
-max_turns = 15
-
-def create_board(num_ships = board_size):
+def create_board(rows, cols, num_ships):
     """
     Creates the initial board that the game is played on. 
-    Parameters include the number of ships that need to be placed on the grid.
+    Parameters include the board dimensions and the number of ships.
     Returns the board and a list of the ship positions.
     """
     board = [["O" for _ in range(board_size)] for _ in range(board_size)]
