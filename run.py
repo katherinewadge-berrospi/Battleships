@@ -10,7 +10,15 @@ def get_dimensions():
     Returns the chosen number of rows and columns. 
     """
     while True:
-        
+        try:
+            rows = int(input("Enter the number of rows for the board (4 to 8): "))
+            cols = int(input("Enter the number of columns for the board (4 to 8): "))
+            if 4 <= rows <= 8 and 4 <= cols <= 8:
+                return rows, cols
+            else:
+                print("Invalid input. Rows and columns must be between 4 and 8.")
+        except ValueError:
+            print("Invalid input. Please enter integers.")  
 
 
 
