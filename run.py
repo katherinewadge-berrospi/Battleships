@@ -22,7 +22,9 @@ def get_player_name():
         else:
             print("Everyone has a name... try again.")
 
-
+# Get player name
+player_name = get_player_name()
+print(f"\nWelcome, {player_name}! Get ready for battle!\n")
 
 print(choose)
 
