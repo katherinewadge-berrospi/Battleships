@@ -68,4 +68,11 @@ while True:
         print(f"Oh no, missed! No ship at ({target_row}, {target_col}).")
         board[target_row][target_col] = "X"  # Mark miss
 
+    print("\nUpdated board:")
+    for row in board:
+        print(" ".join(row))
+
+    if not ship_positions:
+        print("\nCongratulations! We have a winner! You sank all the ships!")
+        break
 
