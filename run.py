@@ -82,3 +82,8 @@ def opponents_target():
     Returns randomly selected co-ordinates.
     """
     return randint(0, board_size -1), randint(0, board_size -1)
+
+player_board, player_ships = create_board()
+opponent_board, opponent_ships = create_board()
+
+opponent_visible_board = [["O" for _ in range(board_size)] for _ in range(board_size)]
