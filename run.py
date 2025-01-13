@@ -125,10 +125,12 @@ while player_ships and opponent_ships:
         print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})!")
         player_board[opponent_row][opponent_col] = "!"
         player_ships.remove((opponent_row, opponent_col))
+        opponent_score += 3
     # Marks a miss
     else:
         print(f"The opponent missed at ({opponent_row}, {opponent_col}).")
         player_board[opponent_row][opponent_col] = "X"
+        opponent_score -= 1
 
     # Check if the game is over
     if not player_ships:
