@@ -52,7 +52,7 @@ def target_placement():
             print("Invalid input. Please enter integers for row and column.")
 
 board, ship_positions = create_board()
-print("\nGame board:")
+print("\Opponent's board:")
 for row in board:
     print(" ".join(row))
 
@@ -76,3 +76,9 @@ while True:
         print("\nCongratulations! We have a winner! You sank all the ships!")
         break
 
+def opponents_target():
+    """
+    Opponent has a turn, randomly selecting integers within the board size.
+    Returns randomly selected co-ordinates.
+    """
+    return randint(0, board_size -1), randint(0, board_size -1)
