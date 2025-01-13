@@ -34,14 +34,22 @@ def create_board(rows, cols, num_ships=None):
     Returns the board and a list of the ship positions.
     """
     if num_ships is None:
-        num_ships = max(rows, cols)
+        num_ships = min(rows, cols)
 
     board = [["O" for _ in range(cols)] for _ in range(rows)]
     ship_positions = []
 
     while len(ship_positions) < num_ships:
-        row = randint(0, rows - 1)
-        col = randint(0, cols - 1)
+
+        # Randomly decided ship's orientation:
+        # 0 = horizontal, 1 = vertical
+        orientation = randint(0, 1)
+
+        # horizontal ship
+        if orientation == 0:
+            row = randint(0, rows - 1)
+            col = randint(0, cols - 2)
+            positions = [(row, col), (row, col + 1)]
 
         # Checks if the position is already taken
         if (row, col) not in ship_positions:
