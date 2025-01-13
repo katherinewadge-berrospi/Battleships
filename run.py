@@ -73,6 +73,10 @@ while player_ships and opponent_ships:
     for row in opponent_visible_board:
         print(" ".join(row))
 
+    # Display scores
+    print(f"Your Score: {player_score}")
+    print(f"Opponent's Score: {opponent_score}")
+
     # Player's turn
     print("Your turn!")
     while True:
@@ -92,14 +96,16 @@ while player_ships and opponent_ships:
 
     # Marks a successful hit
     if (target_row, target_col) in opponent_ships:
-        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})!")
+        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})! You win 3 points.")
         opponent_board[target_row][target_col] = "!"
         opponent_visible_board[target_row][target_col] = "!"
         opponent_ships.remove((target_row, target_col))
+        player_score += 3
     # Marks a miss
     else:
-        print(f"Miss! No ship at ({target_row}, {target_col}).")
+        print(f"Miss! No ship at ({target_row}, {target_col}). You lose 1 point.")
         opponent_visible_board[target_row][target_col] = "X"
+        player_score -= 1
 
     # Checks if game over
     if not opponent_ships:
