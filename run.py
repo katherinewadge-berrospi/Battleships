@@ -99,3 +99,22 @@ while player_ships and opponent_ships:
     # Checks if game over
     if not opponent_ships:
         print(f"Congratulations! We have a winner! You sank all the ships!")
+
+    # Opponent's turn
+    print("Opponent's turn!")
+    while True:
+        opponent_row, opponent_col = opponents_target()
+        if player_board[opponent_row][opponent_col] not in ("X", "M"):
+            break
+    
+    # Marks a successful hit
+    if (opponent_row, opponent_col) in player_ships:
+        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})!")
+        player_board[opponent_row][opponent_col] = "X" 
+        player_ships.remove((opponent_row, opponent_col))
+     # Marks a miss
+    else:
+        print(f"The opponent missed at ({opponent_row}, {opponent_col}).")
+        player_board[opponent_row][opponent_col] = "M" 
+    
+    
