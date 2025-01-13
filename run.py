@@ -4,6 +4,17 @@
 
 from random import randint
 
+def get_dimensions():
+    """
+    Allows the user to pick the size of the board.
+    Returns the chosen number of rows and columns. 
+    """
+    while True:
+        
+
+
+
+
 board_size = 6
 max_turns = 15
 
