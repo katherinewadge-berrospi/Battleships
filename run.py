@@ -7,7 +7,7 @@ from random import randint
 board_size = 6
 max_turns = 15
 
-def create_board(num_ships = 5):
+def create_board(num_ships = board_size):
     """
     Creates the initial board that the game is played on. 
     Parameters include the number of ships that need to be placed on the grid.
@@ -27,12 +27,6 @@ def create_board(num_ships = 5):
 
     return board, ship_positions
 
-board, ship_positions = create_board()
-
-for row in board:
-    print(" ".join(row))
-
-print("Ship positions: ", ship_positions)
 
 def target_placement():
     """
@@ -65,7 +59,6 @@ def opponents_target():
 # Initialising both boards and the ship positions
 player_board, player_ships = create_board()
 opponent_board, opponent_ships = create_board()
-
 opponent_visible_board = [["O" for _ in range(board_size)] for _ in range(board_size)]
 
 # Game loop
@@ -78,6 +71,7 @@ while player_ships and opponent_ships:
     print("Your board: ")
     for row in player_board:
         print(" ".join(row))
+
     print("Opponent's board: ")
     for row in opponent_board:
         print(" ".join(row))
@@ -87,18 +81,21 @@ while player_ships and opponent_ships:
     target_row, target_col = target_placement()
 
      # Marks a successful hit
-    if (target_row, target_column) in opponent_ships:
+    if (target_row, target_col) in opponent_ships:
         print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})!")
-        board[target_row][target_col] = "!" 
+        opponent_board[target_row][target_col] = "!" 
+        opponent_visible_board[target_row][target_col] = "!"
         opponent_ships.remove((target_row, target_col))
     # Marks a miss
     else:
         print(f"Miss! No ship at ({target_row}, {target_col}).")
-        opponent_board[target_row][target_col] = "M"  
+        opponent_visible_board[target_row][target_col] = "M"  
     
     # Checks if game over
     if not opponent_ships:
         print(f"Congratulations! We have a winner! You sank all the ships!")
+
+    print(" ")
 
     # Opponent's turn
     print("Opponent's turn!")
@@ -122,4 +119,5 @@ while player_ships and opponent_ships:
         print("\nOh no! The opponent sank all your ships! You lose!")
         break
 
+    print(" ")
     turn += 1
