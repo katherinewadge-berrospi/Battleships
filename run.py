@@ -117,4 +117,9 @@ while player_ships and opponent_ships:
         print(f"The opponent missed at ({opponent_row}, {opponent_col}).")
         player_board[opponent_row][opponent_col] = "M" 
     
-    
+    # Check if the game is over
+    if not player_ships:
+        print("\nOh no! The opponent sank all your ships! You lose!")
+        break
+
+    turn += 1
