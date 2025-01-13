@@ -139,3 +139,7 @@ while player_ships and opponent_ships:
 
     print(" ")
     turn += 1
+
+# Game over: final scores
+print("Game Over!")
+print(f"Final Scores:\nYou: {player_score}\nOpponent: {opponent_score}")
