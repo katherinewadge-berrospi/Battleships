@@ -62,23 +62,23 @@ opponent_score = 0
 turn = 1
 
 while player_ships and opponent_ships:
-    print(f"|---Turn {turn}---|")
+    print(f"\n|---Turn {turn}---|")
 
     # Displays both boards
-    print("Your board: ")
+    print("\nYour board: ")
     for row in player_board:
         print(" ".join(row))
 
-    print("Opponent's board: ")
+    print("\nOpponent's board: ")
     for row in opponent_visible_board:
         print(" ".join(row))
 
     # Display scores
-    print(f"Your Score: {player_score}")
-    print(f"Opponent's Score: {opponent_score}")
+    print(f"\nYour Score: {player_score}")
+    print(f"\nOpponent's Score: {opponent_score}")
 
     # Player's turn
-    print("Your turn!")
+    print("\nYour turn!")
     while True:
         try:
             target_row = int(input(f"Enter the target row (0 - {rows - 1}): "))
@@ -122,13 +122,13 @@ while player_ships and opponent_ships:
 
     # Marks a successful hit
     if (opponent_row, opponent_col) in player_ships:
-        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})!")
+        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})! They win 3 points.")
         player_board[opponent_row][opponent_col] = "!"
         player_ships.remove((opponent_row, opponent_col))
         opponent_score += 3
     # Marks a miss
     else:
-        print(f"The opponent missed at ({opponent_row}, {opponent_col}).")
+        print(f"The opponent missed at ({opponent_row}, {opponent_col}). They lose 1 point.")
         player_board[opponent_row][opponent_col] = "X"
         opponent_score -= 1
 
