@@ -5,9 +5,25 @@
 from random import randint
 
 
+# Welcome message
 welcome = "\nWelcome to BattleShips!"
 choose = "\nChoose the size of the board..."
 print(welcome.upper())
+
+def get_player_name():
+    """
+    Players should enter their name.
+    Returns the player's name.
+    """
+    while True:
+        name = input("Please enter your name: ").strip()
+        if name:
+            return name
+        else:
+            print("Everyone has a name... try again.")
+
+
+
 print(choose)
 
 def get_dimensions():
