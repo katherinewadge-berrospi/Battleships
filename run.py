@@ -17,8 +17,8 @@ def get_dimensions():
     """
     while True:
         try:
-            rows = int(input("Choose the number of rows (4 to 8):"))
-            cols = int(input("Choose the number of columns (4 to 8):"))
+            rows = int(input("Number of rows (4 to 8):"))
+            cols = int(input("Number of columns (4 to 8):"))
             if 4 <= rows <= 8 and 4 <= cols <= 8:
                 return rows, cols
             else:
@@ -71,7 +71,7 @@ def create_board(rows, cols, num_ships=None):
 rows, cols = get_dimensions()
 
 # Initialising both boards and the ship positions
-num_ships = max(rows, cols)
+num_ships = min(rows, cols)
 player_board, player_ships = create_board(rows, cols)
 opponent_board, opponent_ships = create_board(rows, cols)
 opponent_visible_board = [["O" for _ in range(cols)] for _ in range(rows)]
@@ -85,6 +85,9 @@ turn = 1
 
 while player_ships and opponent_ships:
     print(f"\n|---Turn {turn}---|")
+
+    # Display number of ships remaining
+    print(f"\nShips remaining - You: {len(player_ships)} | Opponent: {len(opponent_ships)}")
 
     # Displays both boards
     print("\nYour board: ")
