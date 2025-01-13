@@ -45,16 +45,25 @@ def create_board(rows, cols, num_ships=None):
         # 0 = horizontal, 1 = vertical
         orientation = randint(0, 1)
 
-        # horizontal ship
+        # Horizontal ship
         if orientation == 0:
             row = randint(0, rows - 1)
             col = randint(0, cols - 2)
+            # Two squares horizontally
             positions = [(row, col), (row, col + 1)]
 
-        # Checks if the position is already taken
-        if (row, col) not in ship_positions:
-            board[row][col] = "#"
-            ship_positions.append((row, col))
+        # Vertical ship
+        else:
+            row = randint(0, rows - 2)
+            col = randint(0, cols - 1)
+            # Two squares vertically
+            positions = [(row, col), (row + 1, col)]
+
+        # Checks there are no overlapping ships
+        if all(pos not in ship_positions for pos in positions):
+            for pos in positions:
+                board[pos[0]][pos[1]] = "#"
+                ship_positions.append(pos)
 
     return board, ship_positions
 
