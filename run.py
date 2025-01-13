@@ -51,30 +51,6 @@ def target_placement():
         except ValueError:
             print("Invalid input. Please enter integers for row and column.")
 
-board, ship_positions = create_board()
-print("\Opponent's board:")
-for row in board:
-    print(" ".join(row))
-
-while True:
-    print("\nPlace your target!")
-    target_row, target_col = target_placement()
-
-    if (target_row, target_col) in ship_positions:
-        print(f"Great hit! You sunk a ship at ({target_row}, {target_col})!")
-        board[target_row][target_col] = "!"  # Mark hit
-        ship_positions.remove((target_row, target_col))
-    else:
-        print(f"Oh no, missed! No ship at ({target_row}, {target_col}).")
-        board[target_row][target_col] = "X"  # Mark miss
-
-    print("\nUpdated board:")
-    for row in board:
-        print(" ".join(row))
-
-    if not ship_positions:
-        print("\nCongratulations! We have a winner! You sank all the ships!")
-        break
 
 def opponents_target():
     """
