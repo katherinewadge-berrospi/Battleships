@@ -63,3 +63,17 @@ player_board, player_ships = create_board()
 opponent_board, opponent_ships = create_board()
 
 opponent_visible_board = [["O" for _ in range(board_size)] for _ in range(board_size)]
+
+turn = 1
+while player_ships and opponent_ships:
+    print(f"|---Turn {turn}---|")
+
+    print("Your board: ")
+    for row in player_board:
+        print(" ".join(row))
+    print("Opponent's board: ")
+    for row in opponent_board:
+        print(" ".join(row))
+    
+    print("Your turn!")
+    target_row, target_col = target_placement()
