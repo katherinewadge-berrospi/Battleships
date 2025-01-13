@@ -29,7 +29,7 @@ def create_board(rows, cols, num_ships=None):
     Returns the board and a list of the ship positions.
     """
     if num_ships is None:
-        num_ships = min(rows, cols)
+        num_ships = max(rows, cols)
 
     board = [["O" for _ in range(cols)] for _ in range(rows)]
     ship_positions = []
@@ -48,7 +48,7 @@ def create_board(rows, cols, num_ships=None):
 
 rows, cols = get_dimensions()
 
-num_ships = min(rows, cols)
+num_ships = max(rows, cols)
 # Initialising both boards and the ship positions
 player_board, player_ships = create_board(rows, cols)
 opponent_board, opponent_ships = create_board(rows, cols)
