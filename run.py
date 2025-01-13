@@ -24,7 +24,7 @@ def get_player_name():
 
 # Get player name
 player_name = get_player_name()
-print(f"\nWelcome, {player_name}! Get ready for battle!\n")
+print(f"\nWelcome, {player_name}! Get ready for battle!")
 
 print(choose)
 
@@ -105,10 +105,10 @@ while player_ships and opponent_ships:
     print(f"\n|---Turn {turn}---|")
 
     # Display number of ships remaining
-    print(f"\nShips remaining - You: {len(player_ships)} | Opponent: {len(opponent_ships)}")
+    print(f"\nShips remaining - {player_name}: {len(player_ships)} | Opponent: {len(opponent_ships)}")
 
     # Displays both boards
-    print("\nYour board: ")
+    print(f"\n{player_name}'s board: ")
     for row in player_board:
         print(" ".join(row))
 
@@ -117,11 +117,11 @@ while player_ships and opponent_ships:
         print(" ".join(row))
 
     # Display scores
-    print(f"\nYour Score: {player_score}")
+    print(f"\n{player_name}'s Score: {player_score}")
     print(f"Opponent's Score: {opponent_score}")
 
     # Player's turn
-    print("\nYour turn!")
+    print(f"\n{player_name}'s turn!")
     while True:
         try:
             target_row = int(input(f"\nEnter the target row (0 - {rows - 1}): "))
@@ -152,7 +152,7 @@ while player_ships and opponent_ships:
 
     # Checks if game over
     if not opponent_ships:
-        print(f"Congratulations! You're the winner! You sank all the ships!")
+        print(f"\nCongratulations! You're the winner {player_name}! You sank all the ships!")
 
     print(" ")
 
@@ -185,4 +185,4 @@ while player_ships and opponent_ships:
 
 # Game over: final scores
 print("Game Over!")
-print(f"Final Scores:\nYou: {player_score}\nOpponent: {opponent_score}")
+print(f"Final Scores:\n{player_name}: {player_score}\nOpponent: {opponent_score}")
