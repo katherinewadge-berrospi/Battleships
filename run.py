@@ -21,18 +21,21 @@ def get_dimensions():
             print("Invalid input. Please enter integers.")  
 
 
-def create_board(rows, cols, num_ships):
+def create_board(rows, cols, num_ships=None):
     """
     Creates the initial board that the game is played on. 
     Parameters include the board dimensions and the number of ships.
     Returns the board and a list of the ship positions.
     """
-    board = [["O" for _ in range(board_size)] for _ in range(board_size)]
+    if num_ships is None:
+        num_ships = min(rows, cols)
+        
+    board = [["O" for _ in range(cols)] for _ in range(rows)]
     ship_positions = []
 
     while len(ship_positions) < num_ships:
-        row = randint(0, board_size -1)
-        col = randint(0, board_size -1)
+        row = randint(0, rows - 1)
+        col = randint(0, cols - 1)
 
         # Checks if the position is already taken
         if (row, col) not in ship_positions:
@@ -41,39 +44,13 @@ def create_board(rows, cols, num_ships):
 
     return board, ship_positions
 
+rows, cols = get_board_dimensions()
 
-def target_placement():
-    """
-    Allows the user to input the row and column for their target.
-    Ensures the input is within the bounds of the board and an integer.
-    Returns the row and column of the target.
-    """
-    while True:
-        try:
-            # Allows user input
-            row = int(input(f"Enter the target row (0 to {board_size - 1}): "))
-            col = int(input(f"Enter the target column (0 to {board_size - 1}): "))
-
-            # Checks if the input is within the bounds of the board
-            if 0 <= row < board_size and 0 <= col < board_size:
-                return row, col
-            else:
-                print("Invalid input. Please enter values within the board's range.")
-        except ValueError:
-            print("Invalid input. Please enter integers for row and column.")
-
-
-def opponents_target():
-    """
-    Opponent has a turn, randomly selecting integers within the board size.
-    Returns randomly selected co-ordinates.
-    """
-    return randint(0, board_size -1), randint(0, board_size -1)
-
+num_ships = min(rows, cols)
 # Initialising both boards and the ship positions
-player_board, player_ships = create_board()
-opponent_board, opponent_ships = create_board()
-opponent_visible_board = [["O" for _ in range(board_size)] for _ in range(board_size)]
+player_board, player_ships = create_board(rows, cols)
+opponent_board, opponent_ships = create_board(rows, cols)
+opponent_visible_board = [["O" for _ in range(cols)] for _ in range(rows)]
 
 # Game loop
 turn = 1
