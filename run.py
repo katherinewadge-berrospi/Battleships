@@ -51,3 +51,7 @@ def target_placement():
         except ValueError:
             print("Invalid input. Please enter integers for row and column.")
 
+board, ship_positions = create_board()
+print("\nGame board:")
+for row in board:
+    print(" ".join(row))
