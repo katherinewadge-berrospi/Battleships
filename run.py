@@ -87,3 +87,6 @@ while player_ships and opponent_ships:
     else:
         print(f"Miss! No ship at ({target_row}, {target_col}).")
         opponent_board[target_row][target_col] = "M"  
+    
+    if not opponent_ships:
+        print(f"Congratulations! We have a winner! You sank all the ships!")
