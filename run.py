@@ -48,11 +48,15 @@ def create_board(rows, cols, num_ships=None):
 
 rows, cols = get_dimensions()
 
-num_ships = max(rows, cols)
 # Initialising both boards and the ship positions
+num_ships = max(rows, cols)
 player_board, player_ships = create_board(rows, cols)
 opponent_board, opponent_ships = create_board(rows, cols)
 opponent_visible_board = [["O" for _ in range(cols)] for _ in range(rows)]
+
+# Initialising scores
+player_score = 0
+opponent_score = 0
 
 # Game loop
 turn = 1
