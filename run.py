@@ -32,3 +32,22 @@ for row in board:
     print(" ".join(row))
 
 print("Ship positions: ", ship_positions)
+
+def target_placement():
+    """
+    Allows the user to input the row and column for their target.
+    Ensures the input is within the bounds of the board and an integer.
+    Returns the row and column of the target.
+    """
+    while True:
+        try:
+            row = int(input(f"Enter the target row (0 to {board_size - 1}): "))
+            col = int(input(f"Enter the target column (0 to {board_size - 1}): "))
+
+            if 0 <= row < board_size and 0 <= col < board_size:
+                return row, col
+            else:
+                print("Invalid input. Please enter values within the board's range.")
+        except ValueError:
+            print("Invalid input. Please enter integers for row and column.")
+
