@@ -55,3 +55,17 @@ board, ship_positions = create_board()
 print("\nGame board:")
 for row in board:
     print(" ".join(row))
+
+while True:
+    print("\nPlace your target!")
+    target_row, target_col = target_placement()
+
+    if (target_row, target_col) in ship_positions:
+        print(f"Great hit! You sunk a ship at ({target_row}, {target_col})!")
+        board[target_row][target_col] = "!"  # Mark hit
+        ship_positions.remove((target_row, target_col))
+    else:
+        print(f"Oh no, missed! No ship at ({target_row}, {target_col}).")
+        board[target_row][target_col] = "X"  # Mark miss
+
+
