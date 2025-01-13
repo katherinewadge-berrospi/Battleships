@@ -19,7 +19,8 @@ def create_board(num_ships = 5):
     while len(ship_positions) < num_ships:
         row = randint(0, board_size -1)
         col = randint(0, board_size -1)
-    
+
+        # Checks if the position is already taken
         if (row, col) not in ship_positions:
             board[row][col] = "#"
             ship_positions.append((row, col))
@@ -41,9 +42,11 @@ def target_placement():
     """
     while True:
         try:
+            # Allows user input
             row = int(input(f"Enter the target row (0 to {board_size - 1}): "))
             col = int(input(f"Enter the target column (0 to {board_size - 1}): "))
 
+            # Checks if the input is within the bounds of the board
             if 0 <= row < board_size and 0 <= col < board_size:
                 return row, col
             else:
@@ -59,15 +62,19 @@ def opponents_target():
     """
     return randint(0, board_size -1), randint(0, board_size -1)
 
+# Initialising both boards and the ship positions
 player_board, player_ships = create_board()
 opponent_board, opponent_ships = create_board()
 
 opponent_visible_board = [["O" for _ in range(board_size)] for _ in range(board_size)]
 
+# Game loop
 turn = 1
+
 while player_ships and opponent_ships:
     print(f"|---Turn {turn}---|")
 
+    # Displays both boards
     print("Your board: ")
     for row in player_board:
         print(" ".join(row))
@@ -75,6 +82,7 @@ while player_ships and opponent_ships:
     for row in opponent_board:
         print(" ".join(row))
     
+    # Player's turn
     print("Your turn!")
     target_row, target_col = target_placement()
 
@@ -88,5 +96,6 @@ while player_ships and opponent_ships:
         print(f"Miss! No ship at ({target_row}, {target_col}).")
         opponent_board[target_row][target_col] = "M"  
     
+    # Checks if game over
     if not opponent_ships:
         print(f"Congratulations! We have a winner! You sank all the ships!")
