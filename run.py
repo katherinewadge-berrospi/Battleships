@@ -1,10 +1,15 @@
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
+
+
 from random import randint
 
 
 # Welcome message
 def display_welcome_message():
     """Displays the welcome message for the game."""
-    print("\nWelcome to BattleShips!".upper())
+    print("\033[31m" + "\nWelcome to BattleShips!".upper())
 
 
 # Get player name
