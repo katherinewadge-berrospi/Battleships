@@ -32,11 +32,7 @@ def get_dimensions():
 
 
 def create_board(rows, cols, num_ships=None):
-    """
-    Creates the initial board that the game is played on.
-    Parameters include the board dimensions and the number of ships.
-    Returns the board and a list of the ship positions.
-    """
+    """Creates a game board and randomly places ships on it."""
     if num_ships is None:
         num_ships = min(rows, cols)
 
@@ -44,26 +40,16 @@ def create_board(rows, cols, num_ships=None):
     ship_positions = []
 
     while len(ship_positions) < num_ships:
-
-        # Randomly decided ship's orientation:
-        # 0 = horizontal, 1 = vertical
         orientation = randint(0, 1)
-
-        # Horizontal ship
+        # Horizontal
         if orientation == 0:
-            row = randint(0, rows - 1)
-            col = randint(0, cols - 2)
-            # Two squares horizontally
+            row, col = randint(0, rows - 1), randint(0, cols - 2)
             positions = [(row, col), (row, col + 1)]
-
-        # Vertical ship
+        # Vertical
         else:
-            row = randint(0, rows - 2)
-            col = randint(0, cols - 1)
-            # Two squares vertically
+            row, col = randint(0, rows - 2), randint(0, cols - 1)
             positions = [(row, col), (row + 1, col)]
 
-        # Checks there are no overlapping ships
         if all(pos not in ship_positions for pos in positions):
             for pos in positions:
                 board[pos[0]][pos[1]] = "#"
