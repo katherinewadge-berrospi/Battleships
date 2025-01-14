@@ -8,16 +8,12 @@ def display_welcome_message():
 
 
 def get_player_name():
-    """
-    Players should enter their name.
-    Returns the player's name.
-    """
+    """Prompts the player to enter their name and returns it."""
     while True:
         name = input("Please enter your name: ").strip()
         if name:
             return name
-        else:
-            print("Everyone has a name... try again.")
+        print("Everyone has a name... try again.")
 
 # Get player name
 player_name = get_player_name()
