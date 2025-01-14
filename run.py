@@ -58,17 +58,21 @@ def create_board(rows, cols, num_ships=None):
     return board, ship_positions
 
 
-rows, cols = get_dimensions()
+def display_boards(player_name, player_board, opponent_visible_board, player_score, opponent_score, player_ships, opponent_ships, turn):
+    """Displays the game state to the players and a score board."""
+    print(f"\n|---Turn {turn}---|")
+    print(f"\nShips remaining - {player_name}: {len(player_ships)} | Opponent: {len(opponent_ships)}")
 
-# Initialising both boards and the ship positions
-num_ships = min(rows, cols)
-player_board, player_ships = create_board(rows, cols)
-opponent_board, opponent_ships = create_board(rows, cols)
-opponent_visible_board = [["O" for _ in range(cols)] for _ in range(rows)]
+    print(f"\n{player_name}'s board:")
+    for row in player_board:
+        print(" ".join(row))
 
-# Initialising scores
-player_score = 0
-opponent_score = 0
+    print("\nOpponent's board:")
+    for row in opponent_visible_board:
+        print(" ".join(row))
+
+    print(f"\n{player_name}'s Score: {player_score}")
+    print(f"Opponent's Score: {opponent_score}")
 
 # Game loop
 turn = 1
