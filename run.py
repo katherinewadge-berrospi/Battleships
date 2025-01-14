@@ -137,18 +137,26 @@ def main():
     opponent_score = 0
     turn = 1
 
+    while player_ships and opponent_ships:
+        display_boards(player_name, player_board, opponent_visible_board, player_score, opponent_score, player_ships, opponent_ships, turn)
 
-    # Checks if game over
-    if not opponent_ships:
-        print(f"\nCongratulations! You're the winner {player_name}! You sank all the ships!")
+        print(f"\n{player_name}'s turn!")
+        player_score = player_turn(opponent_ships, opponent_board, opponent_visible_board, player_score)
 
-    print(" ")
+        if not opponent_ships:
+            print(f"\nCongratulations! You sank all the opponent's ships! You win, {player_name}!")
+            break
+
+        print("\nOpponent's turn!")
+        opponent_score = opponent_turn(player_ships, player_board, opponent_score)
+
+        if not player_ships:
+            print("Oh no! The opponent sank all your ships! You lose!")
+            break
+
+        turn += 1
 
     
-    # Check if the game is over
-    if not player_ships:
-        print("Oh no! The opponent sank all your ships! You lose!")
-        break
 
     print(" ")
     turn += 1
