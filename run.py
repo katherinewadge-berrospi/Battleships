@@ -18,7 +18,7 @@ def get_player_name():
 
 
 def get_dimensions():
-    """Prompts the player to choose board dimensions and validates the input."""
+    """Prompts the player to choose board dimensions, validating the input."""
     print("\nChoose the size of the board...")
     while True:
         try:
@@ -58,10 +58,13 @@ def create_board(rows, cols, num_ships=None):
     return board, ship_positions
 
 
-def display_boards(player_name, player_board, opponent_visible_board, player_score, opponent_score, player_ships, opponent_ships, turn):
+def display_boards(player_name, player_board, opponent_visible_board,
+                   player_score, opponent_score, player_ships,
+                   opponent_ships, turn):
     """Displays the game state to the players and a score board."""
     print(f"\n|---Turn {turn}---|")
-    print(f"\nShips remaining - {player_name}: {len(player_ships)} | Opponent: {len(opponent_ships)}")
+    print(f"\nShips remaining - {player_name}: {len(player_ships)} "
+          f"| Opponent: {len(opponent_ships)}")
 
     print(f"\n{player_name}'s board:")
     for row in player_board:
@@ -75,7 +78,8 @@ def display_boards(player_name, player_board, opponent_visible_board, player_sco
     print(f"Opponent's Score: {opponent_score}")
 
 
-def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_score):
+def player_turn(opponent_ships, opponent_board, opponent_visible_board,
+                player_score):
     """Handles the player's turn."""
     while True:
         try:
@@ -89,7 +93,8 @@ def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_s
             print("Invalid input. Please enter valid coordinates.")
 
     if (target_row, target_col) in opponent_ships:
-        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})!")
+        print(f"Great hit! You sunk opponent's ship at ({target_row}, "
+              f"{target_col})!")
         opponent_board[target_row][target_col] = "!"
         opponent_visible_board[target_row][target_col] = "!"
         opponent_ships.remove((target_row, target_col))
@@ -105,12 +110,14 @@ def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_s
 def opponent_turn(player_ships, player_board, opponent_score):
     """Handles the opponent's turn."""
     while True:
-        opponent_row, opponent_col = randint(0, len(player_board) - 1), randint(0, len(player_board[0]) - 1)
+        opponent_row, opponent_col = randint(0, len(player_board) - 1), \
+                                     randint(0, len(player_board[0]) - 1)
         if player_board[opponent_row][opponent_col] not in ("!", "X"):
             break
 
     if (opponent_row, opponent_col) in player_ships:
-        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})!")
+        print(f"The opponent hit your ship at ({opponent_row}, "
+              f"{opponent_col})!")
         player_board[opponent_row][opponent_col] = "!"
         player_ships.remove((opponent_row, opponent_col))
         opponent_score += 3
@@ -138,26 +145,33 @@ def main():
     turn = 1
 
     while player_ships and opponent_ships:
-        display_boards(player_name, player_board, opponent_visible_board, player_score, opponent_score, player_ships, opponent_ships, turn)
+        display_boards(player_name, player_board, opponent_visible_board,
+                       player_score, opponent_score, player_ships,
+                       opponent_ships, turn)
 
         print(f"\n{player_name}'s turn!")
-        player_score = player_turn(opponent_ships, opponent_board, opponent_visible_board, player_score)
+        player_score = player_turn(opponent_ships, opponent_board,
+                                   opponent_visible_board, player_score)
 
         if not opponent_ships:
-            print(f"\nCongratulations! You sank all the opponent's ships! You win, {player_name}!")
+            print(f"\nCongratulations! You sank all the opponent's ships! "
+                  f"You win, {player_name}!")
             break
 
         print("\nOpponent's turn!")
-        opponent_score = opponent_turn(player_ships, player_board, opponent_score)
+        opponent_score = opponent_turn(player_ships, player_board,
+                                       opponent_score)
 
         if not player_ships:
             print("Oh no! The opponent sank all your ships! You lose!")
             break
 
         turn += 1
-    
+
     print("\nGame Over!")
-    print(f"Final Scores:\n{player_name}: {player_score}\nOpponent: {opponent_score}")
+    print(f"Final Scores:\n{player_name}: {player_score}\nOpponent: "
+          f"{opponent_score}")
+
 
 if __name__ == "__main__":
     main()
