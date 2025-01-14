@@ -121,6 +121,23 @@ def opponent_turn(player_ships, player_board, opponent_score):
 
     return opponent_score
 
+
+def main():
+    """Main function to start and control the game."""
+    display_welcome_message()
+    player_name = get_player_name()
+    rows, cols = get_dimensions()
+
+    num_ships = min(rows, cols)
+    player_board, player_ships = create_board(rows, cols, num_ships)
+    opponent_board, opponent_ships = create_board(rows, cols, num_ships)
+    opponent_visible_board = [["O" for _ in range(cols)] for _ in range(rows)]
+
+    player_score = 0
+    opponent_score = 0
+    turn = 1
+
+
     # Checks if game over
     if not opponent_ships:
         print(f"\nCongratulations! You're the winner {player_name}! You sank all the ships!")
