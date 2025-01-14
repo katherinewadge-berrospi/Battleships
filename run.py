@@ -86,7 +86,8 @@ def display_boards(player_name, player_board, opponent_visible_board,
                    player_score, opponent_score, player_ships,
                    opponent_ships, turn):
     """Displays the game state to the players and a score board."""
-    print(f"\n|---Turn {turn}---|")
+    print(colorama.Fore.MAGENTA + colorama.Style.BRIGHT + f"\n\n|---Turn {turn}---|")
+    print(colorama.Style.RESET_ALL)
     print(f"\nShips remaining - {player_name}: {len(player_ships)} "
           f"| Opponent: {len(opponent_ships)}")
 
