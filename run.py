@@ -181,8 +181,8 @@ def main():
                                    opponent_visible_board, player_score)
 
         if not opponent_ships:
-            print(f"\nCongratulations! You sank all the opponent's ships! "
-                  f"You win, {player_name}!")
+            print(colorama.Fore.GREEN + "\nCongratulations! You sank all the opponent's ships! "
+                  f"You win, {player_name}!" + colorama.Fore.RESET)
             break
 
         print("\nOpponent's turn!")
@@ -190,7 +190,8 @@ def main():
                                        opponent_score)
 
         if not player_ships:
-            print("Oh no! The opponent sank all your ships! You lose!")
+            print(colorama.Fore.RED + "Oh no! The opponent sank all your ships! You lose!"
+            + colorama.Fore.RESET)
             break
 
         turn += 1
