@@ -74,57 +74,34 @@ def display_boards(player_name, player_board, opponent_visible_board, player_sco
     print(f"\n{player_name}'s Score: {player_score}")
     print(f"Opponent's Score: {opponent_score}")
 
-# Game loop
-turn = 1
 
-while player_ships and opponent_ships:
-    print(f"\n|---Turn {turn}---|")
-
-    # Display number of ships remaining
-    print(f"\nShips remaining - {player_name}: {len(player_ships)} | Opponent: {len(opponent_ships)}")
-
-    # Displays both boards
-    print(f"\n{player_name}'s board: ")
-    for row in player_board:
-        print(" ".join(row))
-
-    print("\nOpponent's board: ")
-    for row in opponent_visible_board:
-        print(" ".join(row))
-
-    # Display scores
-    print(f"\n{player_name}'s Score: {player_score}")
-    print(f"Opponent's Score: {opponent_score}")
-
-    # Player's turn
-    print(f"\n{player_name}'s turn!")
+def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_score):
+    """Handles the player's turn."""
     while True:
         try:
-            target_row = int(input(f"\nEnter the target row (0 - {rows - 1}): "))
-            target_col = int(input(f"Enter the target column (0 - {cols - 1}): "))
+            target_row = int(input(f"\nEnter the target row: "))
+            target_col = int(input("Enter the target column: "))
 
-            if 0 <= target_row < rows and 0 <= target_col < cols:
-                if opponent_visible_board[target_row][target_col] not in ("!", "X"):
-                    break
-                else:
-                    print("You already targeted this position. Try again.")
-            else:
-                print("Invalid input. Please enter values within the range.")
-        except ValueError:
-            print("Invalid input. Please enter integers for row and column.")
+            if opponent_visible_board[target_row][target_col] not in ("!", "X"):
+                break
+            print("You already targeted this position. Try again.")
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter valid coordinates.")
 
-    # Marks a successful hit
     if (target_row, target_col) in opponent_ships:
-        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})! You win 3 points.")
+        print(f"Great hit! You sunk opponent's ship at ({target_row}, {target_col})!")
         opponent_board[target_row][target_col] = "!"
         opponent_visible_board[target_row][target_col] = "!"
         opponent_ships.remove((target_row, target_col))
         player_score += 3
-    # Marks a miss
     else:
-        print(f"Miss! No ship at ({target_row}, {target_col}). You lose 1 point.")
+        print(f"Miss! No ship at ({target_row}, {target_col}).")
         opponent_visible_board[target_row][target_col] = "X"
         player_score -= 1
+
+    return player_score
+
+
 
     # Checks if game over
     if not opponent_ships:
