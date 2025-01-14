@@ -1,14 +1,11 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 from random import randint
 
 
 # Welcome message
-welcome = "\nWelcome to BattleShips!"
-choose = "\nChoose the size of the board..."
-print(welcome.upper())
+def display_welcome_message():
+    """Displays the welcome message for the game."""
+    print("\nWelcome to BattleShips!".upper())
+
 
 def get_player_name():
     """
