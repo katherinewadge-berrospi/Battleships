@@ -116,8 +116,8 @@ def player_turn(opponent_ships, opponent_board, opponent_vis_board,
             if opponent_vis_board[target_row][target_col] not in ("!", "X"):
                 break
                 print("You already targeted this position. Try again.")
-            except (ValueError, IndexError):
-                print("Invalid input. Please enter valid coordinates.")
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter valid coordinates.")
 
     if (target_row, target_col) in opponent_ships:
         print(f"Great hit! You sunk opponent's ship at ({target_row}, "
