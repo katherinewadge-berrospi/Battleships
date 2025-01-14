@@ -102,6 +102,24 @@ def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_s
     return player_score
 
 
+def opponent_turn(player_ships, player_board, opponent_score):
+    """Handles the opponent's turn."""
+    while True:
+        opponent_row, opponent_col = randint(0, len(player_board) - 1), randint(0, len(player_board[0]) - 1)
+        if player_board[opponent_row][opponent_col] not in ("!", "X"):
+            break
+
+    if (opponent_row, opponent_col) in player_ships:
+        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})!")
+        player_board[opponent_row][opponent_col] = "!"
+        player_ships.remove((opponent_row, opponent_col))
+        opponent_score += 3
+    else:
+        print(f"The opponent missed at ({opponent_row}, {opponent_col}).")
+        player_board[opponent_row][opponent_col] = "X"
+        opponent_score -= 1
+
+    return opponent_score
 
     # Checks if game over
     if not opponent_ships:
@@ -109,25 +127,7 @@ def player_turn(opponent_ships, opponent_board, opponent_visible_board, player_s
 
     print(" ")
 
-    # Opponent's turn
-    print("Opponent's turn!")
-    while True:
-        opponent_row, opponent_col = randint(0, rows - 1), randint(0, cols - 1)
-        if player_board[opponent_row][opponent_col] not in ("!", "X"):
-            break
-
-    # Marks a successful hit
-    if (opponent_row, opponent_col) in player_ships:
-        print(f"The opponent hit your ship at ({opponent_row}, {opponent_col})! They win 3 points.")
-        player_board[opponent_row][opponent_col] = "!"
-        player_ships.remove((opponent_row, opponent_col))
-        opponent_score += 3
-    # Marks a miss
-    else:
-        print(f"The opponent missed at ({opponent_row}, {opponent_col}). They lose 1 point.")
-        player_board[opponent_row][opponent_col] = "X"
-        opponent_score -= 1
-
+    
     # Check if the game is over
     if not player_ships:
         print("Oh no! The opponent sank all your ships! You lose!")
