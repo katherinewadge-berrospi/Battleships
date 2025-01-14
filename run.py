@@ -9,7 +9,8 @@ from random import randint
 # Welcome message
 def display_welcome_message():
     """Displays the welcome message for the game."""
-    print("\033[31m" + "\nWelcome to BattleShips!".upper())
+    print(colorama.Fore.MAGENTA + colorama.Style.BRIGHT + "\nWelcome to BattleShips!".upper())
+    print(colorama.Style.RESET_ALL)
 
 
 # Get player name
@@ -25,16 +26,19 @@ def get_player_name():
 # Display rules
 def display_rules():
     """Displays the rules of the game."""
-    print("\n--- Rules of BattleShips ---")
+    print(colorama.Fore.MAGENTA + colorama.Style.NORMAL +
+        "\n--- Rules of BattleShips ------------------------------------")
     print("1. The game is played on a grid where ships are hidden.")
     print("2. You and the opponent take turns targeting a grid position.")
     print("3. If you hit a ship, you gain 3 points.")
     print("4. If you miss, you lose 1 point.")
     print("5. Your goal is to sink all the opponent's ships before they "
-          "sink yours.")
+          "\nsink yours.")
     print("6. Ships always come in pairs, 2 ships are always adjacent.")
-    print("7. Choose the size of the board. Hint - smaller is easier.\n")
-    print("8. Have fun and good luck!\n")
+    print("7. Choose the size of the board. Hint - smaller is easier.")
+    print("8. Have fun and good luck!")
+    print("-------------------------------------------------------------")
+    print(colorama.Fore.RESET)
 
 
 def get_dimensions():
