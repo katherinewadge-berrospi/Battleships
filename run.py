@@ -7,6 +7,7 @@ def display_welcome_message():
     print("\nWelcome to BattleShips!".upper())
 
 
+# Get player name
 def get_player_name():
     """Prompts the player to enter their name and returns it."""
     while True:
@@ -15,25 +16,17 @@ def get_player_name():
             return name
         print("Everyone has a name... try again.")
 
-# Get player name
-player_name = get_player_name()
-print(f"\nWelcome, {player_name}! Get ready for battle!")
-
-print(choose)
 
 def get_dimensions():
-    """
-    Allows the user to pick the size of the board.
-    Returns the chosen number of rows and columns.
-    """
+    """Prompts the player to choose board dimensions and validates the input."""
+    print("\nChoose the size of the board...")
     while True:
         try:
-            rows = int(input("Number of rows (4 to 8):"))
-            cols = int(input("Number of columns (4 to 8):"))
+            rows = int(input("Number of rows (4 to 8): "))
+            cols = int(input("Number of columns (4 to 8): "))
             if 4 <= rows <= 8 and 4 <= cols <= 8:
                 return rows, cols
-            else:
-                print("Invalid input. Rows & columns must be between 4 and 8.")
+            print("Invalid input. Rows & columns must be between 4 and 8.")
         except ValueError:
             print("Invalid input. Please enter integers.")
 
