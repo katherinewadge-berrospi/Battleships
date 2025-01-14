@@ -148,6 +148,8 @@ def main():
     """Main function to start and control the game."""
     display_welcome_message()
     player_name = get_player_name()
+    display_rules()
+
     rows, cols = get_dimensions()
 
     num_ships = min(rows, cols)
