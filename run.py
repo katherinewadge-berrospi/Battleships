@@ -155,12 +155,9 @@ def main():
             break
 
         turn += 1
-
     
+    print("\nGame Over!")
+    print(f"Final Scores:\n{player_name}: {player_score}\nOpponent: {opponent_score}")
 
-    print(" ")
-    turn += 1
-
-# Game over: final scores
-print("Game Over!")
-print(f"Final Scores:\n{player_name}: {player_score}\nOpponent: {opponent_score}")
+if __name__ == "__main__":
+    main()
