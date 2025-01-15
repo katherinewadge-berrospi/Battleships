@@ -47,11 +47,11 @@ def get_dimensions():
     print("\nChoose the size of the board...")
     while True:
         try:
-            rows = int(input("Number of rows (4 to 10): "))
-            cols = int(input("Number of columns (4 to 10): "))
-            if 4 <= rows <= 10 and 4 <= cols <= 10:
+            rows = int(input("Number of rows (5 to 10): "))
+            cols = int(input("Number of columns (5 to 10): "))
+            if 5 <= rows <= 10 and 5 <= cols <= 10:
                 return rows, cols
-            print("Invalid input. Rows & columns must be between 4 and 10.")
+            print("Invalid input. Rows & columns must be between 5 and 10.")
         except ValueError:
             print("Invalid input. Please enter integers.")
 
