@@ -88,9 +88,9 @@ def display_boards(player_name, player_board, opponent_vis_board,
     """Displays the game state to the players and a score board."""
     print(colorama.Fore.MAGENTA + colorama.Style.BRIGHT +
           f"\n\n|---Turn {turn}---|")
-    print(colorama.Style.RESET_ALL)
-    print(f"\nShips remaining - {player_name}: {len(player_ships)} "
+    print(f"Ships remaining - {player_name}: {len(player_ships)} "
           f"| Opponent: {len(opponent_ships)}")
+    print(colorama.Style.RESET_ALL)
 
     print(f"\n{player_name}'s board:")
     for row in player_board:
