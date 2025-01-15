@@ -178,7 +178,8 @@ def main():
                        player_score, opponent_score, player_ships,
                        opponent_ships, turn)
 
-        print(f"\n{player_name}'s turn!")
+        print(colorama.Fore.GREEN + f"\n{player_name}'s turn!"
+              + colorama.Fore.RESET)
         player_score = player_turn(opponent_ships, opponent_board,
                                    opponent_vis_board, player_score)
 
@@ -188,7 +189,7 @@ def main():
                   f"You win, {player_name}!" + colorama.Fore.RESET)
             break
 
-        print("\nOpponent's turn!")
+        print(colorama.Fore.RED + "\nOpponent's turn!" + colorama.Fore.RESET)
         opponent_score = opponent_turn(player_ships, player_board,
                                        opponent_score)
 
