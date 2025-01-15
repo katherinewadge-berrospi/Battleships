@@ -1,1 +1,1 @@
-colorama==<version>
+colorama==0.4.6
