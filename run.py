@@ -59,7 +59,7 @@ def get_dimensions():
 def create_board(rows, cols, num_ships=None):
     """Creates a game board and randomly places ships on it."""
     if num_ships is None:
-        num_ships = min(rows, cols)
+        num_ships = 2 * min(rows, cols)
 
     board = [["O" for _ in range(cols)] for _ in range(rows)]
     ship_positions = []
@@ -164,7 +164,7 @@ def main():
 
     rows, cols = get_dimensions()
 
-    num_ships = min(rows, cols)
+    num_ships = 2 * min(rows, cols)
     player_board, player_ships = create_board(rows, cols, num_ships)
     opponent_board, opponent_ships = create_board(rows, cols, num_ships)
     opponent_vis_board = [["O" for _ in range(cols)] for _ in range(rows)]
