@@ -1,9 +1,8 @@
 import colorama
 from colorama import Fore, Back, Style
-colorama.init()
-
-
 from random import randint
+
+colorama.init()
 
 
 # Welcome message
