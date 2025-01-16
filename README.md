@@ -36,16 +36,21 @@ This is how the programme appears on various devices.
 ## Features
 
 ### Welcome screen:
-A magenta "welcome to battleships" and a white name entry message are the first messages the user sees as soon as they run the program. Once entered, the rules of the game (also in magenta) are displayed for users to uderstand all the rules to this variation of Battleships. This is then followed by a prompt for users to choose their board size where they can choose the number of rows and columns independently from 5 to 10. In the rules they were advised that the smaller the board, the easier the game.
+A magenta "Welcome to Battleships" message and a white name entry prompt are the first messages the user sees upon running the program. Once entered, the rules of the game (displayed in magenta) are explained to ensure players understand this variation of Battleships. Next, users are prompted to choose their board size, with the option to select the number of rows and columns independently (5 to 10). The rules advise that smaller boards make the game easier.
 
 ![WelcomeScreen](assets/img/battleships-startup.jpg)
 
 ### Turns
-The turns are highlighted in a magenta colour that continues the theme from the previous messages. The function display_boards() in run.py is responsible for the turns increasing by 1 each round. It displays how many ships each player has left on their boards, an easy way for the user to track their progress, followed by the player's board being printed, then the opponent's. "O"'s represent the empty grid spaces, "#" represents the player's ships whilst the opponent's are hidden. The score board is then displayed and starts the game with 0 points each. Finally, the player gets to go first and choose their first target.
+The turns are highlighted in magenta to maintain consistency with previous messages. The display_boards() function in run.py ensures the turn counter increases with each round. It displays how many ships each player has left, helping users track their progress. The player's board is then printed, followed by the opponent's hidden board.
+
+- "O" represents empty grid spaces.
+- "#" represents the player's ships, while the opponent's ships remain hidden.
+
+The scoreboard is displayed, starting at 0 points each. The player always takes the first turn by selecting a target.
 
 ![PlayersTurn](assets/img/battleships-turn-one.jpg)
 
-Once the player has selected their target row and column, they are told whether they got a hit or a miss. This is immediately followed by the opponet's turn which is automated and selects a random co-ordinate but it cannot be one that's already been selected. Lastly, players are told whether their opponent hit or missed on of their ships before going to the next round.
+After choosing a target, the player is informed whether they hit or missed a ship. The opponent's turn follows, selecting random coordinates that haven't already been targeted. Players are notified of the opponent's results (hit or miss) before moving to the next round.
 
 ![OpponentsTurn](assets/img/battleships-opp-turn.jpg)
 
@@ -68,7 +73,7 @@ PEP8 Online to ensure the Python code adheres to the PEP 8 style guide.The deplo
 
 ![PEP8passed](assets/img/pep8-pass.jpg)
 
-The code was tested in earlier stages to ensure errors were being picked up and then minor formatting adjustments (such as consistent indentation and line length) were implemented. The example image below shows my first testing in a much earlier version of the game code through PEP8 testing. This showed that more frequent checks were needed due to the number of warning messages, mostly from lines having too many characters in them.
+Earlier testing of the first versions of the game multiple revealed formatting issues (e.g., line length), prompting more frequent checks. Below is an earlier test result showing warnings before they were actioned:
 
 ![PEP8failed](assets/img/pep8-fail.jpg)
 
