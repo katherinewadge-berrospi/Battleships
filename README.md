@@ -60,6 +60,18 @@ However, if the player cannot sink all the opponent's ships in time, they must b
 
 
 ## Testing
+The code for the Battleships game has been tested using the following validation tools:
+
+<strong>Python Code Validation:</strong>
+
+PEP8 Online to ensure the Python code adheres to the PEP 8 style guide.The deployed website showed no major errors or warnings.
+
+![PEP8passed](assets/img/PEP8-passed.jpg)
+
+The code was tested in earlier stages to ensure errors were being picked up and then minor formatting adjustments (such as consistent indentation and line length) were implemented. The example image below shows my first testing in a much earlier version of the game code through PEP8 testing. This showed that more frequent checks were needed due to the number of warning messages, mostly from indentation errors.
+
+![PEP8failed](assets/img/PEP8-failed.jpg)
+
 
 
 ## Deployment 
