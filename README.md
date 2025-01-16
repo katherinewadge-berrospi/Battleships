@@ -3,7 +3,7 @@
 Welcome,
 BattleShips is a terminal-based Python game where you compete against an opponent to sink their hidden ships on a grid. This game is a fun way to practice Python programming concepts like loops, functions, and random number generation.
 
-Project 3 for the Code Institute. Please visit the live site [here](https://battleships-kwb-853aa1c83842.herokuapp.com/)
+Project 3 for the Code Institute. Please visit the live site [here](https://battleships-kwb-853aa1c83842.herokuapp.com/).
 
 Contents:
 1. [Introduction](#introduction)
@@ -50,8 +50,13 @@ Once the player has selected their target row and column, they are told whether 
 ![OpponentsTurn](assets/img/battleships-opponents-turn.jpg)
 
 ### End Game
+The number of turns in a game is not limited, the only way a winner is declared is by sinking all the opponents ships. When a player wins the game they are greeted with a congratulations message in green and the player's name at the end to make it more personal.
 
+![Winner](assets/img/battleships-winner.jpg)
 
+However, if the player cannot sink all the opponent's ships in time, they must be declared the loser. They are then given a message in red stating that they lost the game. Lastly, no matter the outcome, win or lose, players are given their final scores.
+
+![Loser](assets/img/battleships-loser.jpg)
 
 
 ## Reminders
