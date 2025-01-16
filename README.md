@@ -120,6 +120,13 @@ The first attempt at deployment failed as there was no mention of colorama in th
 ![HerokuFailed](assets/img/heroku-fail.jpg)
 
 ## Future
+Future versions of this game could include:
+
+- Enhanced AI logic: improved opponent's targeting system so that is focuses on adjacent tiles after a hit. This would make the game morechallenging.
+- Custom ship placement: giving the option for players to place their ships in desired co-ordinates.
+- More ship variety: like in the original board game, having ships that come in different sizes would increase the difficulty of the game and may introduce more strategic gameplay.
+- Powerups: changes up the repetition of the game, it may make it more engaging.
+- A graphical interface: to make the game look more polished and eye-catching.
 
 
 ## Credits
