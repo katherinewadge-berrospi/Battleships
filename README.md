@@ -3,6 +3,33 @@
 Welcome,
 BattleShips is a terminal-based Python game where you compete against an opponent to sink their hidden ships on a grid. This game is a fun way to practice Python programming concepts like loops, functions, and random number generation.
 
+Project 3 for the Code Institute. Please visit the live site [here](https://battleships-kwb-853aa1c83842.herokuapp.com/)
+
+Contents:
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Testing](#testing)
+4. [Deployment](#deployment)
+5. [Future](#future)
+6. [Credits](#credits) 
+
+## Introduction
+### How to play
+1. The game is played on a grid where opponent's ships are hidden.
+2. Players and the opponent (computer) take turns targeting positions by marking co-ordinates.
+3. Points are awarded as follows:
+    - Hit: +3 points
+    - Miss: -1 point
+4. The goal is to sink all the opponent's ships before they sink yours.
+5. Ships have each other's backs and come in pairs (2 adjacent tiles, horizontally or vertically).
+6. You can choose the board size (from 5x5 to 10x10).
+7. The number of ships is double the smaller dimension of the board.
+
+
+
+
+
+
 ## Reminders
 
 - Your code must be placed in the `run.py` file
