@@ -40,6 +40,18 @@ A magenta "welcome to battleships" and a white name entry message are the first 
 
 ![WelcomeScreen](assets/img/battleships-startup.jpg)
 
+### Turns
+The turns are highlighted in a magenta colour that continues the theme from the previous messages. The function display_boards() in run.py is responsible for the turns increasing by 1 each round. It displays how many ships each player has left on their boards, an easy way for the user to track their progress, followed by the player's board being printed, then the opponent's. "O"'s represent the empty grid spaces, "#" represents the player's ships whilst the opponent's are hidden. The score board is then displayed and starts the game with 0 points each. Finally, the player gets to go first and choose their first target.
+
+![PlayersTurn](assets/img/battleships-turn-one.png)
+
+Once the player has selected their target row and column, they are told whether they got a hit or a miss. This is immediately followed by the opponet's turn which is automated and selects a random co-ordinate but it cannot be one that's already been selected. Lastly, players are told whether their opponent hit or missed on of their ships before going to the next round.
+
+![OpponentsTurn](assets/img/battleships-opponents-turn.jpg)
+
+### End Game
+
+
 
 
 ## Reminders
