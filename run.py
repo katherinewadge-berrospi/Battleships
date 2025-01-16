@@ -109,8 +109,10 @@ def player_turn(opponent_ships, opponent_board, opponent_vis_board,
     """Handles the player's turn."""
     while True:
         try:
-            target_row = int(input(f"\nRow to attack (0-{len(opponent_board) - 1}): "))
-            target_col = int(input(f"Column to attack (0-{len(opponent_board[0]) - 1}): "))
+            target_row = int(input(
+                  f"\nRow to attack (0-{len(opponent_board) - 1}): "))
+            target_col = int(input(
+                  f"Column to attack (0-{len(opponent_board[0]) - 1}): "))
 
             if opponent_vis_board[target_row][target_col] not in ("!", "X"):
                 break
