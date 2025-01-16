@@ -84,9 +84,16 @@ The Battleships game was manually tested in various scenarios to ensure it funct
 
 <strong>Board Size Selection:</strong>
 
-- Enter valid rows and columns, 5 to 10 - board is created and game begins
-- Enter invalid rows and columns - error message promting repeats
-- Enter non-integer input - error message promting repeats
+- Enter valid rows and columns, 5 to 10 - board is created and game begins.
+- Enter invalid rows and columns - error message promting repeats.
+- Enter non-integer input - error message promting repeats.
+
+<strong>Gameplay</strong>
+
+- Player selects valid target coordinates - hit or miss is registered, score updated.
+- Player selects invalid coordinates - error message displayed, prompt repeats.
+- Player sinks all opponent ships - victory message displayed, game ends.
+- Opponent sinks all player ships - loss message displayed, game ends.
 
 
 ## Deployment 
