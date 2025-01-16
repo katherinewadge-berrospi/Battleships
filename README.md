@@ -30,7 +30,7 @@ Contents:
 ### Mock Up
 This is how the programme appears on various devices.
 
-![MockUp](assets/img/battleships-mockup.jpg)
+![MockUp](assets/img/battleships-mock-up.jpg)
 
 
 ## Features
@@ -43,11 +43,11 @@ A magenta "welcome to battleships" and a white name entry message are the first 
 ### Turns
 The turns are highlighted in a magenta colour that continues the theme from the previous messages. The function display_boards() in run.py is responsible for the turns increasing by 1 each round. It displays how many ships each player has left on their boards, an easy way for the user to track their progress, followed by the player's board being printed, then the opponent's. "O"'s represent the empty grid spaces, "#" represents the player's ships whilst the opponent's are hidden. The score board is then displayed and starts the game with 0 points each. Finally, the player gets to go first and choose their first target.
 
-![PlayersTurn](assets/img/battleships-turn-one.png)
+![PlayersTurn](assets/img/battleships-turn-one.jpg)
 
 Once the player has selected their target row and column, they are told whether they got a hit or a miss. This is immediately followed by the opponet's turn which is automated and selects a random co-ordinate but it cannot be one that's already been selected. Lastly, players are told whether their opponent hit or missed on of their ships before going to the next round.
 
-![OpponentsTurn](assets/img/battleships-opponents-turn.jpg)
+![OpponentsTurn](assets/img/battleships-opp-turn.jpg)
 
 ### End Game
 The number of turns in a game is not limited, the only way a winner is declared is by sinking all the opponents ships. When a player wins the game they are greeted with a congratulations message in green and the player's name at the end to make it more personal.
@@ -62,15 +62,15 @@ However, if the player cannot sink all the opponent's ships in time, they must b
 ## Testing
 The code for the Battleships game has been tested using the following validation tools:
 
-<strong>Python Code Validation:</strong>
+### Python Code Validation:
 
 PEP8 Online to ensure the Python code adheres to the PEP 8 style guide.The deployed website showed no major errors or warnings.
 
-![PEP8passed](assets/img/pep8-passed.jpg)
+![PEP8passed](assets/img/pep8-pass.jpg)
 
-The code was tested in earlier stages to ensure errors were being picked up and then minor formatting adjustments (such as consistent indentation and line length) were implemented. The example image below shows my first testing in a much earlier version of the game code through PEP8 testing. This showed that more frequent checks were needed due to the number of warning messages, mostly from indentation errors.
+The code was tested in earlier stages to ensure errors were being picked up and then minor formatting adjustments (such as consistent indentation and line length) were implemented. The example image below shows my first testing in a much earlier version of the game code through PEP8 testing. This showed that more frequent checks were needed due to the number of warning messages, mostly from lines having too many characters in them.
 
-![PEP8failed](assets/img/pep8-failed.jpg)
+![PEP8failed](assets/img/pep8-fail.jpg)
 
 ### Manual Testing
 
@@ -108,11 +108,11 @@ Verified the application works as expected after deployment to Heroku: [Click he
 
 The final version had no errors and was successfully built:
 
-![HerokuPassed](assets/img/heroku-passed.jpg)
+![HerokuPassed](assets/img/heroku-pass.jpg)
 
 The first attempt at deployment failed as there was no mention of colorama in the requirements.txt file.
 
-![HerokuFailed](assets/img/heroku-failed.jpg)
+![HerokuFailed](assets/img/heroku-fail.jpg)
 
 ## Future
 
