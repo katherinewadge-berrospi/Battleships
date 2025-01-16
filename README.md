@@ -130,3 +130,20 @@ Future versions of this game could include:
 
 
 ## Credits
+Code Institute: For providing the project brief and guidance.
+
+Slack - https://app.slack.com/
+
+Colorama download - https://pypi.org/project/colorama/
+
+Colorama tutorial - https://www.youtube.com/watch?v=bg-quTTOeH4
+
+Python tutor - https://pythontutor.com/render.html#mode=edit
+
+PEP8 Online Validator: For Python code validation.
+
+Heroku: For hosting the deployed application.
+
+Images used for mockups and screenshots are created during the development process.
+
+Thank you to my Mentor Spencer Barriball for his support.
