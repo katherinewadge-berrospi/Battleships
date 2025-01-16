@@ -36,7 +36,7 @@ This is how the programme appears on various devices.
 ## Features
 
 ### Welcome screen:
-A magenta "welcome to battleships" and a white name entry message are the first messages the user sees as soon as they run the program 
+A magenta "welcome to battleships" and a white name entry message are the first messages the user sees as soon as they run the program. Once entered, the rules of the game (also in magenta) are displayed for users to uderstand all the rules to this variation of Battleships. This is then followed by a prompt for users to choose their board size where they can choose the number of rows and columns independently from 5 to 10. In the rules they were advised that the smaller the board, the easier the game.
 
 ![WelcomeScreen](assets/img/battleships-startup.jpg)
 
