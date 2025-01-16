@@ -13,20 +13,32 @@ Contents:
 5. [Future](#future)
 6. [Credits](#credits) 
 
+
 ## Introduction
+
 ### How to play
 1. The game is played on a grid where opponent's ships are hidden.
 2. Players and the opponent (computer) take turns targeting positions by marking co-ordinates.
 3. Points are awarded as follows:
-    - Hit: +3 points
-    - Miss: -1 point
+    - Hit ("!"): +3 points
+    - Miss ("X"): -1 point
 4. The goal is to sink all the opponent's ships before they sink yours.
 5. Ships have each other's backs and come in pairs (2 adjacent tiles, horizontally or vertically).
 6. You can choose the board size (from 5x5 to 10x10).
 7. The number of ships is double the smaller dimension of the board.
 
+### Mock Up
+This is how the programme appears on various devices.
+
+![MockUp](assets/img/battleships-mockup.jpg)
 
 
+## Features
+
+### Welcome screen:
+A magenta "welcome to battleships" and a white name entry message are the first messages the user sees as soon as they run the program 
+
+![WelcomeScreen](assets/img/battleships-startup.jpg)
 
 
 
