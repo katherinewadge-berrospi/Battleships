@@ -72,6 +72,22 @@ The code was tested in earlier stages to ensure errors were being picked up and 
 
 ![PEP8failed](assets/img/pep8-failed.jpg)
 
+### Manual Testing
+
+The Battleships game was manually tested in various scenarios to ensure it functions correctly. Below are the details of the manual testing conducted:
+
+<strong>Welcome Message and Input Validation:</strong>
+
+- Player enters their name - then the game continues
+- Player enters an empty name - prompt is repeated until valid input.
+- No restrictions on using non-alphabetic characters in their name.
+
+<strong>Board Size Selection:</strong>
+
+- Enter valid rows and columns, 5 to 10 - board is created and game begins
+- Enter invalid rows and columns - error message promting repeats
+- Enter non-integer input - error message promting repeats
+
 
 ## Deployment 
 <strong>Heroku Deployment Check:</strong>
