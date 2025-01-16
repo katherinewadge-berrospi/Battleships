@@ -74,7 +74,7 @@ The code was tested in earlier stages to ensure errors were being picked up and 
 
 ### Manual Testing
 
-The Battleships game was manually tested in various scenarios to ensure it functions correctly. Below are the details of the manual testing conducted:
+The Battleships game was manually tested in various scenarios to ensure it functions correctly. All code was frequently run in the terminal and any errors were picked up quickly, this also included putting in known invalid inputs to test how the code handled errors. Below are the details of the manual testing conducted:
 
 <strong>Welcome Message and Input Validation:</strong>
 
@@ -88,12 +88,17 @@ The Battleships game was manually tested in various scenarios to ensure it funct
 - Enter invalid rows and columns - error message promting repeats.
 - Enter non-integer input - error message promting repeats.
 
-<strong>Gameplay</strong>
+<strong>Gameplay:</strong>
 
 - Player selects valid target coordinates - hit or miss is registered, score updated.
 - Player selects invalid coordinates - error message displayed, prompt repeats.
 - Player sinks all opponent ships - victory message displayed, game ends.
 - Opponent sinks all player ships - loss message displayed, game ends.
+
+<strong>Scoring System:</strong>
+
+- Player/ opponent hits a ship - +3 points added score.
+- Player/ opponent misses - -1 point deducted from score.
 
 
 ## Deployment 
